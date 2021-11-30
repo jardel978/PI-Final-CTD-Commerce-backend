@@ -1,10 +1,11 @@
 package com.dh.projetofinal.CTDCommerce.service;
 
-import com.dh.projetofinal.CTDCommerce.entity.Produto;
+import com.dh.projetofinal.CTDCommerce.entity.Categoria;
 import com.dh.projetofinal.CTDCommerce.entity.NomeCategoria;
+import com.dh.projetofinal.CTDCommerce.entity.Produto;
+import com.dh.projetofinal.CTDCommerce.repository.ICategoriaRepository;
 import com.dh.projetofinal.CTDCommerce.repository.IProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,9 @@ public class ProdutoService {
     @Autowired
     private IProdutoRepository produtoRepository;
 
+    @Autowired
+    private ICategoriaRepository categoriaRepository;
+
     public List<Produto> buscarTodos() {
         return produtoRepository.findAll();
     }
@@ -25,12 +29,11 @@ public class ProdutoService {
     }
 
     public List<Produto> buscarPorCategoria(NomeCategoria nomeCategoria) {
-
         try {
-            return produtoRepository.findAllByCategoria(nomeCategoria);
+            Categoria categoria = categoriaRepository.findAllByNomeCategoria(nomeCategoria);
+            return produtoRepository.findAllByCategoria(categoria);
         }catch (RuntimeException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Erro no service.");
+            throw new RuntimeException("Categoria não encontrada.");
         }
     }
 

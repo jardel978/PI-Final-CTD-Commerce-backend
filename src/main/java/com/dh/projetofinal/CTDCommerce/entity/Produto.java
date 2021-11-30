@@ -1,7 +1,6 @@
 package com.dh.projetofinal.CTDCommerce.entity;
 
 import lombok.*;
-
 import javax.persistence.*;
 
 @Getter

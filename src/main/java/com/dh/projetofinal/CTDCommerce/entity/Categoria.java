@@ -23,7 +23,7 @@ public class Categoria {
 
     @Column(name = "categoria_nome")
     @Enumerated(value = EnumType.STRING)
-    private NomeCategoria nome;
+    private NomeCategoria nomeCategoria;
 
     @OneToMany(mappedBy = "categoria")
     @JsonIgnore

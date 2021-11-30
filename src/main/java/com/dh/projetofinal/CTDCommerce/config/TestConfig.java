@@ -26,12 +26,12 @@ public class TestConfig implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         // Instanciando as categorias
-        Categoria eletronicos = Categoria.builder().nome(NomeCategoria.ELETRONICOS).build();
-        Categoria eletrodomesticos = Categoria.builder().nome(NomeCategoria.ELETRODOMESTICOS).build();
-        Categoria informatica = Categoria.builder().nome(NomeCategoria.INFORMATICA).build();
-        Categoria bebe = Categoria.builder().nome(NomeCategoria.BEBE).build();
-        Categoria esporte = Categoria.builder().nome(NomeCategoria.ESPORTE).build();
-        Categoria games = Categoria.builder().nome(NomeCategoria.GAMES).build();
+        Categoria eletronicos = Categoria.builder().nomeCategoria(NomeCategoria.ELETRONICOS).build();
+        Categoria eletrodomesticos = Categoria.builder().nomeCategoria(NomeCategoria.ELETRODOMESTICOS).build();
+        Categoria informatica = Categoria.builder().nomeCategoria(NomeCategoria.INFORMATICA).build();
+        Categoria bebe = Categoria.builder().nomeCategoria(NomeCategoria.BEBE).build();
+        Categoria esporte = Categoria.builder().nomeCategoria(NomeCategoria.ESPORTE).build();
+        Categoria games = Categoria.builder().nomeCategoria(NomeCategoria.GAMES).build();
 
         Produto ssd = Produto.builder()
                         .titulo("SSD 480Gb")

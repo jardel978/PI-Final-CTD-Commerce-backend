@@ -1,11 +1,10 @@
 package com.dh.projetofinal.CTDCommerce.controller;
 
-import com.dh.projetofinal.CTDCommerce.entity.Produto;
 import com.dh.projetofinal.CTDCommerce.entity.NomeCategoria;
+import com.dh.projetofinal.CTDCommerce.entity.Produto;
 import com.dh.projetofinal.CTDCommerce.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -32,15 +31,11 @@ public class ProdutoController {
     }
 
     @GetMapping("/categoria/{nomeCategoria}")
-    public ResponseEntity<List<Produto>> buscarPorCategoria(@PathVariable("nomeCategoria") NomeCategoria nomeCategoria) {
-        ResponseEntity<List<Produto>> responseEntity = null;
-        if (nomeCategoria != null) {
-            responseEntity = ResponseEntity.status(HttpStatus.NO_CONTENT).body(produtoService.buscarPorCategoria(nomeCategoria));
-        } else {
-            responseEntity = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+    public List<Produto> buscarPorCategoria(@PathVariable("nomeCategoria") String nomeCategoria) {
+        NomeCategoria stringParaEnum = NomeCategoria.valueOf(nomeCategoria.toUpperCase());
 
-        return responseEntity;
+          return produtoService.buscarPorCategoria(stringParaEnum);
+
     }
 }
 
