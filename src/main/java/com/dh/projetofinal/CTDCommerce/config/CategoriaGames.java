@@ -20,11 +20,11 @@ public class CategoriaGames implements CommandLineRunner {
     @Autowired
     private IProdutoRepository produtoRepository;
 
-
     @Override
     public void run(String... args) throws Exception {
 
         Categoria games = Categoria.builder().nomeCategoria(NomeCategoria.GAMES).build();
+//       Salvando categoria
         categoriaRepository.save(games);
 
         Produto ps4 = Produto.builder()
@@ -62,8 +62,7 @@ public class CategoriaGames implements CommandLineRunner {
                 .imagem("https://http2.mlstatic.com/D_NQ_NP_2X_663372-MLA43440081326_092020-F.webp")
                 .categoria(games).build();
 
-
-        // Salvando os produtos
+//        Salvando os produtos
         produtoRepository.saveAll(Arrays.asList(
                 ps4,
                 controleps4,
@@ -71,7 +70,6 @@ public class CategoriaGames implements CommandLineRunner {
                 jogothelast,
                 jogospider
         ));
-
     }
 }
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,7 +22,8 @@ public class Categoria {
     @GeneratedValue(generator = "categoria", strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(name = "categoria_nome")
+    @Column(name = "categoria_nome", length = 50)
+    @NotNull(message = "Informe o nome da categoria.")
     @Enumerated(value = EnumType.STRING)
     private NomeCategoria nomeCategoria;
 
