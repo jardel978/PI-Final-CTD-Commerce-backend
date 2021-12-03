@@ -10,9 +10,9 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000/", allowedHeaders = "")
 @RestController
 @RequestMapping("/produtos")
-@CrossOrigin(origins = "", allowedHeaders = "")
 public class ProdutoController {
 
     @Autowired
