@@ -12,19 +12,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/produtos")
+@CrossOrigin(origins = "", allowedHeaders = "")
 public class ProdutoController {
 
     @Autowired
     private ProdutoService produtoService;
 
-    @CrossOrigin(origins = "", allowedHeaders = "")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Produto> buscarTodos() {
         return produtoService.buscarTodos();
     }
 
-    @CrossOrigin(origins = "", allowedHeaders = "")
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Produto buscarPorId(@PathVariable Long id) {
@@ -32,7 +31,6 @@ public class ProdutoController {
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado."));
     }
 
-    @CrossOrigin(origins = "", allowedHeaders = "")
     @GetMapping("/categoria/{nomeCategoria}")
     public List<Produto> buscarPorCategoria(@PathVariable("nomeCategoria") String nomeCategoria) {
         NomeCategoria stringParaEnum = NomeCategoria.valueOf(nomeCategoria.toUpperCase());

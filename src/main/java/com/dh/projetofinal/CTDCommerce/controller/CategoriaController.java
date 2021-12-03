@@ -12,12 +12,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/produtos/categorias")
+@CrossOrigin(origins = "", allowedHeaders = "")
 public class CategoriaController {
 
     @Autowired
     private CategoriaService categoriaService;
-
-    @CrossOrigin(origins = "", allowedHeaders = "")
+    
     @GetMapping
     public List<Categoria> buscarTodos() {
         return categoriaService.buscarTodos();
