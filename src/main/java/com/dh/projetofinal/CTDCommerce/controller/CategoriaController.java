@@ -17,7 +17,7 @@ public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;
 
-    @CrossOrigin
+    @CrossOrigin(origins = "", allowedHeaders = "")
     @GetMapping
     public List<Categoria> buscarTodos() {
         return categoriaService.buscarTodos();
