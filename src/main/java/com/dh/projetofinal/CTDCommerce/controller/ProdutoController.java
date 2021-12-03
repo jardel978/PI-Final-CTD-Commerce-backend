@@ -10,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000/", allowedHeaders = "")
+@CrossOrigin(origins = "*", allowedHeaders = "")
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoController {
