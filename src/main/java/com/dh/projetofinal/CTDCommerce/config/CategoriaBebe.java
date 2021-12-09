@@ -38,14 +38,14 @@ public class CategoriaBebe implements CommandLineRunner {
                 .titulo("Macacao Infantil")
                 .preco(94.90)
                 .descricao("Macacão Infantil Bebê 100% Algodão Liso - 1 Ao 3 - Kit Com 6")
-                .imagem("https://http2.mlstatic.com/D_Q_NP_840594-MLB43624022844_092020-R.webp")
+                .imagem("https://http2.mlstatic.com/D_NQ_NP_840594-MLB43624022844_092020-W.webp")
                 .categoria(bebe).build();
 
         Produto triciclo = Produto.builder()
                 .titulo("Triciclo")
                 .preco(139.00)
                 .descricao("Totoka Triciclo Infantil Bebe Carrinho Totokinha Menino Azul")
-                .imagem("https://http2.mlstatic.com/D_Q_NP_989573-MLB45841101632_052021-R.webp")
+                .imagem("https://http2.mlstatic.com/D_NQ_NP_989573-MLB45841101632_052021-W.webp")
                 .categoria(bebe).build();
 
         Produto bombaTiraLeite = Produto.builder()
